@@ -1,0 +1,309 @@
+*{
+	font-family: monospace; 	
+}
+
+h2{
+	margin: 0px 10px;
+	margin-bottom:10px;
+}
+h2 span{
+	font-size:4px;
+}
+.weltAst{
+	display: inline-block;
+    margin: 10px;
+	font-size: large;
+	padding:6px 10px;
+	cursor: pointer;
+	border:outset 3px;
+	border-radius:50px;
+	border-block: none;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+	outline:inset 1px black;
+	box-shadow: 10px 5px 31px -7px;
+	/*transform: rotateX(180deg);*//* dreht scrollbarr*/
+}
+.currentWeltAst{	
+	outline:double 3px black;
+	outline-offset:3.5px;
+	font-size: xx-large;
+}
+#status{
+	float: left;
+	width:30vw;
+	height: 75vh;
+	padding:3px;
+    overflow: overlay;
+}
+/*#status div:nth-child(-n + 3){
+	font-size:large;
+}*/
+#status div{
+	
+	padding:5px;
+	font-size:larger;
+	border-radius:4px;
+}
+.dim{
+	display:none;
+}
+.turn, .zeit, .dim{
+	
+}
+#status .turn {
+    font-size: x-large;
+}
+.turn > span{
+    font-size: xx-large;
+	outline:double 3px ;
+	
+	/*border: outset 3px;*/
+    border-radius: 50px;
+    border-block: none;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+	padding:10px 20px;
+	box-shadow: 10px 5px 31px -7px;
+}
+.amZug{
+	font-size:larger;
+	display: inline-block;
+	outline-offset:-3px;
+	outline-style:solid;
+	box-shadow:10px 5px 31px -7px;
+}
+.whiteamZug{
+	outline: solid 3px black;
+    
+}
+.blackamZug{
+	background-color:black;
+	color:white;
+	outline:solid 3px black;
+	box-shadow:10px 5px 8px grey;
+}
+
+
+.zuege{
+	height:35vh;
+	overflow:auto;
+}
+.zuege >div{
+	border:solid 2px;
+}
+
+
+
+#board {
+	width: 36vw;
+    height: 36vw;
+    margin: auto;
+    border: solid;
+	display: inline-block;
+	background-color:grey;
+}
+
+.feld{
+	width: 12.5%;
+    height: 12.5%;
+    outline: solid 1px grey;
+    outline-offset: -1px;
+    float: left;
+    /*justify-content: center;
+    display: flex;
+    align-items: center;*/
+	position: relative;
+}
+.black{
+	background-color: black;
+}
+.white{
+	background-color: white;
+}
+.figure {
+	width: 60%;
+    z-index: 1;
+	/*outline: solid 1px grey;*/
+    position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.centered{
+	position: absolute;
+	top: 0%;
+    left: 0%;
+    /*transform: translate(-50%,-50%);*/
+}
+.ageNumber{
+	z-index:3;
+	pointer-events: none;
+	color:blue;
+	font-size: 2vw;
+	font-family: fangsong;
+	transform: translateX(70%);
+	
+    right: 0px;
+}
+.black.marked{
+	background-color: #0000ff77;
+}
+.white.marked{
+	background-color: #add8e6;
+}
+.occupied.marked.black{
+	background-color:#ff0000aa;
+}
+.occupied.marked.white{
+	background-color:#ff000077;
+}
+.occupied.marked.black.sameClass{
+	background-color: #0000ff77;
+}
+.occupied.marked.white.sameClass{
+	background-color:#add8e6;
+}
+.cursor{
+	outline:solid 1vw #00ff00;
+	outline-offset:-1.5vw;
+	 outline-style: ridge; 
+}
+.cursorOverMoveableUnit{
+	outline:solid 1vw #00ff00;
+	outline-offset:-1.5vw;
+	 outline-style: ridge; 
+}
+.cursorOverMoveableUnit img{
+	outline:none 1px #00ff00aa;
+	outline-offset:-1.5vw;
+}
+.cursorOverUnmoveableUnit{
+	outline:solid 1vw #ff0000;
+	outline-offset:-1.5vw;
+	 outline-style: ridge; 
+}
+.cursorOverUnmoveableUnit  img{
+	outline:none 1px #ff0000aa;
+	outline-offset:-1.5vw;
+}
+.cursorNeutral  {
+	outline:solid 1vw #ff00ff;
+	outline-offset:-1.5vw;
+	 outline-style: ridge; 
+}
+.shortMark.occupied  {
+	outline: solid 0.7vw #ff0000;
+    outline-offset: -1.8vw;
+    outline-style: ridge;
+}
+.shortMark  {
+	outline: solid 0.7vw #0000ff;
+    outline-offset: -1.8vw;
+    outline-style: ridge;
+}
+.unmovableshortMark  {
+	outline: solid 0.7vw #aaaaaa;
+    outline-offset: -1.8vw;
+    outline-style: ridge;
+}
+.unmovableshortMark.occupied  {
+	outline: solid 0.7vw #ffa500;
+    outline-offset: -1.8vw;
+    outline-style: ridge;
+}
+.AnyhoverOrCursur{
+	 outline-offset: -1.5vw;
+    outline-style: double;
+	border-radius: 1.2vw
+}
+.warning{
+	color:red;
+}
+
+#UnfoldingSettings{
+	display:none;
+	overflow: auto;
+    height: 90%;
+	width: 20vw;
+}
+#UnfoldingSettings > div {
+	padding:4px 8px;
+}
+#UnfoldingSettings button{
+	padding:4px 8px;
+}
+#SavesHeadlineToggle span{
+	cursor: pointer;
+}
+.localSave{
+	padding:8px 3px;
+}
+.localSave *{
+	padding:5px;
+}
+input.localSaveInput{
+    margin: auto;
+    padding: 5px;
+    display: block;
+    width: 217px;
+	border-style: dotted;
+    border-top: none;
+    border-left: none;
+    border-right: hidden black 1px;
+}
+
+.localSaveSlotTitle{
+	/*background-color:red;*/
+	margin-right: 10px;
+}
+.localSaveName{
+	font-size:larger;
+}
+.localSaveExtraInfo {
+	margin: auto 0px auto 15px;
+    width: max-content;
+	
+}
+#weltenbaum{
+	overflow: auto;
+    white-space: nowrap;
+	overflow-x: overlay;
+    height:79px;
+	 margin-bottom: 8px;
+	/* transform: rotateX(180deg);*//* dreht scrollbarr*/  
+}
+#weltenbaum::-webkit-scrollbar{
+    display: none;
+  }
+#lokalerspeicher{
+	float:inline-end;
+	height: 88vh;
+	
+	margin:10px;
+}
+#MoreDiv{
+	float:unset;
+}
+#UnfoldingSaves{
+	display:none;
+}
+#mobileSteuerung{
+	display:block;
+	position: absolute;
+	left:20px;
+	bottom:20px;
+	margin:10px;
+	z-index: 20;
+}
+#mobileSteuerung button{
+	font-size:3vw;
+	width:4vw;
+	height:4vw;
+}
+
+/*button {
+	margin:0px;
+	font-size:xx-small;
+	outline:solid black;float:left;
+}*/

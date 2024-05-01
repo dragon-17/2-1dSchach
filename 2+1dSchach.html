@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<title>The Time Traveller Chess</title>
+<meta charset="utf-8">
+<meta name="author" content="Daniel K. C. Reul">
+<link rel="stylesheet" href="schach.css">
+<link rel="stylesheet" href="colors.css">
+
+</head>
+<body>
+
+<h2>The Time Traveller Chess<sup><span>&reg;Daniel-Reul-2+1dSchach/<span></sup>
+</h2>
+	
+<div id="lokalerspeicher">
+	<div id="MoreDiv">More
+		<button  onclick="toogleSettings()">&gt; </button>
+	</div>
+	
+	<div id="UnfoldingSettings">
+		<div class="SavesHeadline" id="SavesHeadlineToggle" >Locle Saves:<span onclick="toggleSaves()" >&gt;</span></div>
+		<span id="SavesContainer">Saves</span>
+		<div>Steuerung:<br/> Cursur:W A S D <br/>Time:Q E</div>
+		<div>
+			<label >Aggenumbers Visible?(_x)
+			<input type="checkbox" id="ageNumbersVisible" name="ageNumbersVisible"  onclick="toggleAgeNumbers()" checked>
+			</label>
+			<br/>
+			<label >Cursur Visible?(_c)
+			<input type="checkbox" id="cursurVisible" name="cursurVisible"  onclick="cursurVisiblillity()" checked>
+			</label>
+			<br/>
+			<label >Ask Before Save And Load?
+			<input type="checkbox" id="AskBeforeSaveAndLoad" name="AskBeforeSaveAndLoad"  onclick="AskBeforeSaveAndLoad=!AskBeforeSaveAndLoad;" checked>
+			</label>
+			<br/>
+			<label >Name Savefiles?
+			<input type="checkbox" id="nameSavefiles" name="nameSavefiles"  onclick="toggleNameSaveFiles()" checked>
+			</label>
+			<br/>
+			<label >Smartphone Controll?
+			<input type="checkbox" id="mobileControllVis" name="mobileCheckbox"  onclick="moblileCOntroll()">
+			</label>
+			<br/>
+			<label class="MobilControllResizeSlider">Smartphone Controll Size:
+			<br/>
+				<input type="range" min="1" max="10" value="4" class="slider" id="MobilControllResizeSliderRange" onchange="resizeMobilControll()">
+				<span id="MobilControllResizeSliderValue">4</span>
+			</label>
+		</div>
+	</div>
+	
+	<div id="mobileSteuerung">
+	<button onclick="game.timeStep(-1);moveCursur(cursor);">&larr;</button>
+	<button onclick="moveCurserArrow(0,-1)">&wedge;</button>
+	<button onclick="game.timeStep(+1);moveCursur(cursor);">&rarr;</button><br/>
+	<button onclick="moveCurserArrow(-1,0)">&lt;</button>
+	<button onclick="moveCurserArrow(0,1)">&vee;</button>
+	<button onclick="moveCurserArrow(1,0)">&gt;</button>
+	<button onclick="pressEnter()" transfrom="rotate(90deg)">L</button>
+	</div>
+</div>
+
+<div id="main">
+
+	<div id="weltenbaum"></div>
+	<div id="status"></div>
+
+	<div id="board"></div>
+	
+</div>
+
+<!-- script sequence important!!! -->
+<script src="2+1dSchach.js"></script>
+<script src="lokalStorage.js"></script>
+<script src="mobileControl.js"></script>
+
+<!-- was only used to generate custum colors -->
+<!-- <script src="colors.js"></script> -->
+
+</body>
+</html>
